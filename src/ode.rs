@@ -42,10 +42,12 @@
 // pub use cppbridge::{Bridge, bput};
 
 mod cppode;
-use cppode::*;
+pub use cppode::*;
+/*
 pub use cppode::{dBodyID, dGeomID, dTriIndex};
 pub use cppode::{dMatrix4, dMatrix3, dVector4, dVector3, dReal}; // 16 12 4 4
 pub use cppode::{dQuaternion};
+*/
 
 #[warn(unused)]
 // #[warn(unused_imports)]
