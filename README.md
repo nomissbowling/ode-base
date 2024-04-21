@@ -12,8 +12,15 @@ Links
 
 see also
 
-- [https://crates.io/crates/ode](https://crates.io/crates/ode)
-- [https://github.com/nomissbowling/ode](https://github.com/nomissbowling/ode)
+- [https://crates.io/crates/ode-rs](https://crates.io/crates/ode-rs)
+- [https://github.com/nomissbowling/ode-rs](https://github.com/nomissbowling/ode-rs)
+
+
+Exsamples
+---------
+
+- [https://crates.io/crates/ode-rs-0000](https://crates.io/crates/ode-rs-0000)
+- [https://github.com/nomissbowling/ode-rs-0000]( https://github.com/nomissbowling/ode-rs-0000)
 
 
 License
