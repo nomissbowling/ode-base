@@ -31,7 +31,7 @@ fn main() {
   // let c_inl = if o_path == "." { "-Ob0" }else{ "-fno-default-inline" };
   // let c_asm = if o_path == "." { "-Fa" }else{ "-S" };
 
-  let _mk_cc = |dname: &str, sname: &str, iname: &str, oname: &str| {
+  let mk_cc = |dname: &str, sname: &str, iname: &str, oname: &str| {
     let sd = PathBuf::from(dname);
     let fname = format!("{}", sd.join(sname).to_str().expect("invalid path"));
     println!("cargo:rerun-if-changed={}", fname);
@@ -46,7 +46,7 @@ fn main() {
       .include(iname)
       .compile(oname)
   };
-//  mk_cc("./src", "bridge.cpp", "./include", "bridge");
+  mk_cc("./src", "bridge.cpp", "./include", "bridge");
 
   let mk_bindings = |hdd: &str, header: &str, rsd: &str, rsfile: &str,
     binl: bool, bcmt: bool| { // inline, comment
@@ -66,8 +66,8 @@ fn main() {
       .expect("Could not write bindings!");
   };
   if o_path == "." {
-//    mk_bindings("./include", "bridge.hpp", "./include", "bridge_bindings.rs",
-//      false, true); // cc should be compiled with option no default inline
+    mk_bindings("./include", "bridge.hpp", "./include", "bridge_bindings.rs",
+      false, true); // cc should be compiled with option no default inline
     mk_bindings("./ode", "ode.hpp", "./ode", "ode_bindings.rs",
       false, true);
   }

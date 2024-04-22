@@ -37,9 +37,21 @@
 #![allow(non_camel_case_types)]
 #![allow(non_upper_case_globals)]
 
-// mod cppbridge;
-// use cppbridge::*;
-// pub use cppbridge::{Bridge, bput};
+mod cppbridge;
+use cppbridge::*;
+pub use cppbridge::{dMULTIPLY0_331, dMULTIPLY0_333};
+pub use cppbridge::{dMULTIPLY0_441, dMULTIPLY0_444};
+pub use cppbridge::{convexfvp, trimeshvi};
+pub use cppbridge::{CopyConvexFVP, CopyTriMeshVI};
+// use cppbridge::{ScaleConvexFVP, ScaleTriMeshVI, SetScaleLimit}; // private
+pub use cppbridge::{CvtConvexFVPFromTriMeshVI, CvtTriMeshVIFromConvexFVP};
+pub use cppbridge::{FreeConvexFVP, FreeTriMeshVI};
+pub use cppbridge::{RecalcFaces, Normal4, Cross3};
+
+/// replace bridge.hpp (defined in ode.hpp)
+pub type dReal = f64;
+/// replace bridge.hpp (defined in ode.hpp)
+pub type dTriIndex = u32;
 
 mod cppode;
 pub use cppode::*;
@@ -55,6 +67,22 @@ pub use cppode::{dQuaternion};
 #[warn(non_snake_case)]
 #[warn(non_camel_case_types)]
 #[warn(non_upper_case_globals)]
+
+pub mod err;
+use err::*;
+
+pub mod mat;
+use mat::*;
+
+pub mod prim;
+use prim::*;
+pub use prim::{Matrix4, M4I, Matrix3, M3I, Quaternion, QI};
+pub use prim::{PId, PI, PIh, PIt, PIq, PIx};
+pub use prim::{PIh3, PIt2, PIt4, PIt5, PIq3, PIx5};
+
+pub mod krp;
+use krp::*;
+pub use krp::{Krp, KRPnk, KRP100, KRP095, KRP080, KRP001};
 
 /// size_type_of
 pub fn size_type_of<T>(_t: &T) -> (usize, &str) {
