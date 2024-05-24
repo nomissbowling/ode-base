@@ -82,7 +82,8 @@ pub use prim::{PIh3, PIt2, PIt4, PIt5, PIq3, PIx5};
 
 pub mod krp;
 use krp::*;
-pub use krp::{Krp, KRPnk, KRP100, KRP095, KRP080, KRP001};
+pub use krp::{Krp, KRPnk, KRP100, KRP095, KRP090, KRP080, KRP070};
+pub use krp::{KRP060, KRP050, KRP040, KRP030, KRP020, KRP010, KRP001};
 
 /// size_type_of
 pub fn size_type_of<T>(_t: &T) -> (usize, &str) {

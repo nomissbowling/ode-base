@@ -1,4 +1,4 @@
-#![doc(html_root_url = "https://docs.rs/ode-base/0.1.2")]
+#![doc(html_root_url = "https://docs.rs/ode-base/0.2.1")]
 //! ODE Open Dynamics Engine bindings base for Rust
 //!
 //! # Requirements
